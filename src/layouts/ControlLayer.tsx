@@ -31,13 +31,13 @@ const ControlLayer = ({ children, className }: Props) => {
       className={cn(
         className,
         isHidden ? "opacity-0 pointer-events-none" : "opacity-100",
-        "flex flex-col h-screen bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-lg overflow-hidden transition-opacity duration-300 ease-in-out"
+        "flex flex-col h-screen bg-linear-to-br from-neutral-900 to-neutral-800 text-white rounded-lg overflow-hidden transition-opacity duration-300 ease-in-out"
       )}
     >
       <div className="flex justify-between items-center p-2 bg-neutral-800 draggable">
         <div className="flex items-center gap-2 non-draggable">
           <img src="/reco-d-logo.svg" alt="reco-d logo" className="w-6 h-6" />
-          <p className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <p className="text-lg font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600">
             reco-d
           </p>
         </div>

@@ -76,12 +76,17 @@ function createWindow() {
     },
   });
 
+
+  // Ensure the windows are visible on all workspaces(desktops), including full-screen ones
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
-  win.setAlwaysOnTop(true, "screen-saver", 1);
   studio.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
-  studio.setAlwaysOnTop(true, "screen-saver", 1);
   floatingWebCam.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+
+ // set the windows to be always on top of other windows, even in full-screen mode, and give them a higher priority than the default "always on top" windows
+  win.setAlwaysOnTop(true, "screen-saver", 1);
+  studio.setAlwaysOnTop(true, "screen-saver", 1);
   floatingWebCam.setAlwaysOnTop(true, "screen-saver", 1);
+
 
   win.webContents.on("did-finish-load", () => {
     win?.webContents.send("main-process-message", new Date().toLocaleString());

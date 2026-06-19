@@ -4,13 +4,13 @@ import App from "./App.tsx";
 import "./index.css";
 import { ClerkProvider } from "@clerk/react";
 import { getClerkPublishableKey } from "./lib/env";
-import { KeyRound, Terminal } from "lucide-react"; // Make sure to import from lucide-react
+import { KeyRound, Terminal } from "lucide-react"; 
 
 const PUBLISHABLE_KEY = getClerkPublishableKey();
 
 const MissingConfig = () => (
   // 1. Made the entire background 'draggable' so the frameless window isn't trapped
-  <div className="flex h-screen w-screen items-center justify-center bg-neutral-950 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 to-neutral-950 p-6 draggable">
+  <div className="flex h-screen w-screen items-center justify-center bg-neutral-950 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-neutral-900 to-neutral-950 p-6 draggable">
     
     {/* 2. Glassmorphic card, 'non-draggable' so users can highlight the text */}
     <div className="non-draggable max-w-md w-full space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl transition-all">

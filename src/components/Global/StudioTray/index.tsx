@@ -86,7 +86,7 @@ const StudioTray = () => {
     <div className="flex flex-col gap-3 draggable">
       {/* Preview panel */}
       {preview && (
-        <div className="rounded-xl overflow-hidden border border-white/[0.06] bg-black aspect-video w-full">
+        <div className="rounded-xl overflow-hidden border border-white/6 bg-black aspect-video w-full">
           <video
             autoPlay
             ref={videoElement}
@@ -96,7 +96,7 @@ const StudioTray = () => {
       )}
 
       {/* Tray - REMOVED non-draggable so the background can be dragged */}
-      <div className="flex items-center justify-between gap-3 bg-[#161616] border border-white/[0.06] rounded-2xl px-4 py-3">
+      <div className="flex items-center justify-between gap-3 bg-[#161616] border border-white/6 rounded-2xl px-4 py-3">
 
         {/* Record button + timer */}
         <div className="flex items-center gap-3">
@@ -114,7 +114,7 @@ const StudioTray = () => {
             disabled={recording}
             aria-label="Start recording"
             className={cn(
-              "non-draggable w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-200", // ADDED non-draggable
+              "non-draggable w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200", // ADDED non-draggable
               recording
                 ? "bg-red-500 cursor-default scale-90"
                 : "bg-red-500/80 hover:bg-red-500 hover:scale-105 cursor-pointer"
@@ -130,7 +130,7 @@ const StudioTray = () => {
 
           <span
             className={cn(
-              "text-sm font-medium tabular-nums tracking-wide transition-colors duration-300 min-w-[60px]",
+              "text-sm font-medium tabular-nums tracking-wide transition-colors duration-300 min-w-15",
               recording ? "text-red-400" : "text-neutral-700"
             )}
           >
@@ -142,7 +142,7 @@ const StudioTray = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-px h-6 bg-white/[0.06]" />
+        <div className="w-px h-6 bg-white/6" />
 
         {/* Controls */}
         <div className="flex items-center gap-1">
@@ -171,7 +171,7 @@ const StudioTray = () => {
               "non-draggable flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-150", // ADDED non-draggable
               preview
                 ? "bg-indigo-500/12 text-indigo-400 hover:bg-indigo-500/20"
-                : "text-neutral-600 hover:bg-white/[0.06] hover:text-neutral-300"
+                : "text-neutral-600 hover:bg-white/6 hover:text-neutral-300"
             )}
           >
             <Cast size={16} />
